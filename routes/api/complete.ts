@@ -25,6 +25,7 @@ export const handler: Handlers = {
 
         let response = new Response(JSON.stringify(completion), {
             headers: {
+                "Access-Control-Allow-Origin": "*",
                 "content-type": "application/json",
             }
         });
