@@ -13,15 +13,15 @@ export const handler: Handlers = {
         const body = await req.json();
 
         const { apiKey, model, prompt, temperature, max_tokens } = body;
-
         const openai = new OpenAI (apiKey);
         const completion = await openai.createCompletion({
             model,
             prompt,
             temperature,
-            max_tokens
+            maxTokens: max_tokens
         });
 
+        console.log(openai.createCompletion)
 
         let response = new Response(JSON.stringify(completion), {
             headers: {
