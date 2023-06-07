@@ -27,7 +27,6 @@ export const handler: Handlers = {
         const openai = new OpenAI (apiKey);
         const completion = await openai.createChatCompletion({
             model,
-            model,
             messages,
             content,
             temperature,
